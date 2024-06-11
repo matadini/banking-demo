@@ -1,0 +1,11 @@
+package org.matadini;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BankDemoWebApp {
+    public static void main(String[] args) {
+        SpringApplication.run(BankDemoWebApp.class, args);
+    }
+}
