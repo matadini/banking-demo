@@ -1,6 +1,6 @@
 server:
-  port: 7070
+  port: 8080
 
 target-service:
   server: localhost
-  port: 8080
+  port: 8081

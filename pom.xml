@@ -19,7 +19,7 @@
         <spring.boot.maven.plugin.version>3.2.5</spring.boot.maven.plugin.version>
         <spring.boot.dependencies.version>3.2.5</spring.boot.dependencies.version>
         <spring.cloud-version>2023.0.2</spring.cloud-version>
-        <image>banking-demo/${project.artifactId}:${project.version}</image>
+        <docker.registry>${registry}</docker.registry>
     </properties>
 
     <dependencyManagement>
@@ -72,6 +72,7 @@
                             <image>eclipse-temurin:21-jre</image>
                         </from>
                         <to>
+                            <image>${docker.registry}${project.artifactId}:${project.version}</image>
                             <tags>
                                 <tag>latest</tag>
                             </tags>

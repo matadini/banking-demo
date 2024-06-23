@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: banking-demo-webapp
+spec:
+  selector:
+    app: banking-demo-webapp
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: NodePort

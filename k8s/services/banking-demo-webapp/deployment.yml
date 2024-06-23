@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banking-demo-webapp
+  labels:
+    app: banking-demo-webapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: banking-demo-webapp
+      labels:
+        app: banking-demo-webapp
+    spec:
+      containers:
+        - name: banking-demo-webapp
+          image: banking-demo-webapp:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: k8s
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: banking-demo-webapp

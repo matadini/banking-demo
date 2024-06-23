@@ -1,17 +1,19 @@
 services:
   webapp:
-    image: banking-demo/banking-demo-webapp:latest
+    image: banking-demo-webapp:latest
     container_name: banking-demo-webapp
     ports:
-      - "7070:7070"
+      - "8080:8080"
     depends_on:
       - service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   service:
-    image: banking-demo/banking-demo-service:latest
+    image: banking-demo-service:latest
     container_name: banking-demo-service
     ports:
-      - "8080:8080"
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
