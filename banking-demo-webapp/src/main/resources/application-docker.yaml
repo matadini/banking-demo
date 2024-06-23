@@ -2,5 +2,5 @@ server:
   port: 7070
 
 target-service:
-  server: localhost
+  server: banking-demo-service
   port: 8080

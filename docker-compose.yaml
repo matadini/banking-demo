@@ -1,14 +1,17 @@
 services:
-  frontend:
+  webapp:
     image: banking-demo/banking-demo-webapp:latest
     container_name: banking-demo-webapp
     ports:
       - "7070:7070"
     depends_on:
-      - backend
+      - service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
-  backend:
+  service:
     image: banking-demo/banking-demo-service:latest
     container_name: banking-demo-service
     ports:
       - "8080:8080"
+
