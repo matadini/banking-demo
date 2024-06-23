@@ -41,3 +41,7 @@ build/
 /banking-demo-ui/node_modules/
 /banking-demo-ui/node/
 /banking-demo-ui/dist/
+/banking-demo-webapp/src/frontend/.angular/
+/banking-demo-webapp/src/frontend/dist/
+/banking-demo-webapp/src/frontend/node/
+/banking-demo-webapp/src/frontend/node_modules/

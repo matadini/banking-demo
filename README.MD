@@ -1,9 +1,12 @@
 # Fullstack banking demo application.
 
-## 1. Build application
-Execute `mvn clean install` in the main directory. Docker images will be built automatically.
+## 1. Build applications
+Execute `mvn clean install` in the main directory. 
 
-## 2. Run applications using `docker-compose` file.
+# 2. Build docker image
+Execute `mvn package -P build-docker-image` in the main directory. 
+
+## 3. Run applications using `docker-compose` file.
 Execute `docker compose up -d` in main directory to create containers.
 
 ## 3. Testing

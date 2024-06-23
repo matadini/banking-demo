@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-class BankDemoBackend {
+class BankDemoService {
     public static void main(String[] args) {
-        SpringApplication.run(BankDemoBackend.class, args);
+        SpringApplication.run(BankDemoService.class, args);
     }
 }

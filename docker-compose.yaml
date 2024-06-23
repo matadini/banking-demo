@@ -1,14 +1,14 @@
 services:
   frontend:
     image: banking-demo/banking-demo-webapp:latest
-    container_name: banking-demo-frontend
+    container_name: banking-demo-webapp
     ports:
       - "7070:7070"
     depends_on:
       - backend
 
   backend:
-    image: banking-demo/banking-demo-backend:latest
-    container_name: banking-demo-backend
+    image: banking-demo/banking-demo-service:latest
+    container_name: banking-demo-service
     ports:
       - "8080:8080"

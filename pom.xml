@@ -8,8 +8,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>banking-demo-backend</module>
-        <module>banking-demo-ui</module>
+        <module>banking-demo-service</module>
         <module>banking-demo-webapp</module>
     </modules>
 
@@ -70,7 +69,7 @@
                     <version>3.4.2</version>
                     <configuration>
                         <from>
-                            <image>openjdk:21-jdk</image>
+                            <image>eclipse-temurin:21-jre</image>
                         </from>
                         <to>
                             <tags>

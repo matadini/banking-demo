@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../service/api-service';
-import { Observable } from 'rxjs';
 import { BankAccount } from '../../model/bank-account';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
