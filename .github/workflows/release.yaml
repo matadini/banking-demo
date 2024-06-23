@@ -26,6 +26,9 @@ jobs:
       - name: Set release version
         run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.incrementalVersion}
 
+      - name: Set env
+        run: echo "RELEASE_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+
       - name: Build Java artifacts
         run: mvn clean install
 
@@ -42,7 +45,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A
-          git commit -m "Release ${{ steps.build-number.outputs.BUILD_NUMBER }}"
+          git commit -m "Release $RELEASE_VERSION"
           git push
 
 
