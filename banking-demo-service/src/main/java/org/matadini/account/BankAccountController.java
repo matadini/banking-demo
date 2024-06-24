@@ -25,6 +25,13 @@ class BankAccountController {
                         .accountNumber("020250607")
                         .build(),
                 BankAccountDto.builder()
+                        .accountName("Savings account")
+                        .accountType(BankAccountType.SAVINGS)
+                        .ledgerBalance(BigDecimal.valueOf(500))
+                        .availableBalance(BigDecimal.valueOf(9000))
+                        .accountNumber("020252317")
+                        .build(),
+                BankAccountDto.builder()
                         .accountName("Checking account")
                         .accountType(BankAccountType.CHECKING)
                         .ledgerBalance(BigDecimal.valueOf(1000))
@@ -43,11 +50,19 @@ class BankAccountController {
                         .transactionDate(LocalDateTime.now())
                         .build(),
                 BankAccountHistory.builder()
+                        .transactionTitle("Transaction 3")
+                        .amountValue(BigDecimal.valueOf(-15))
+                        .currency("PLN")
+                        .transactionDate(LocalDateTime.now())
+                        .build(),
+                BankAccountHistory.builder()
                         .transactionTitle("Transaction 2")
                         .amountValue(BigDecimal.valueOf(-50))
                         .currency("PLN")
                         .transactionDate(LocalDateTime.now())
                         .build());
     }
+
+
 
 }
