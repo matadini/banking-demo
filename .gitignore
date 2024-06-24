@@ -41,7 +41,13 @@ build/
 /banking-demo-ui/node_modules/
 /banking-demo-ui/node/
 /banking-demo-ui/dist/
-/banking-demo-webapp/src/frontend/.angular/
-/banking-demo-webapp/src/frontend/dist/
-/banking-demo-webapp/src/frontend/node/
-/banking-demo-webapp/src/frontend/node_modules/
+/banking-demo-webapp/src/frontend/angular/.angular/
+/banking-demo-webapp/src/frontend/angular/dist/
+/banking-demo-webapp/src/frontend/angular/node/
+/banking-demo-webapp/src/frontend/angular/node_modules/
+
+/banking-demo-webapp/src/frontend/vue/.angular/
+/banking-demo-webapp/src/frontend/vue/dist/
+/banking-demo-webapp/src/frontend/vue/node/
+/banking-demo-webapp/src/frontend/vue/node_modules/
+/banking-demo-webapp/production/

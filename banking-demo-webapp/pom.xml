@@ -19,15 +19,21 @@
 
     <profiles>
         <profile>
-            <id>build-docker-image</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.google.cloud.tools</groupId>
-                        <artifactId>jib-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
+            <id>angular</id>
+            <properties>
+                <npm-dir>src/frontend/angular</npm-dir>
+                <output-dir>/dist/bank/browser</output-dir>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>vue</id>
+            <properties>
+                <npm-dir>src/frontend/vue</npm-dir>
+                <output-dir>/dist</output-dir>
+            </properties>
         </profile>
     </profiles>
 
@@ -45,7 +51,7 @@
                 <artifactId>frontend-maven-plugin</artifactId>
                 <version>1.14.2</version>
                 <configuration>
-                    <workingDirectory>src/frontend</workingDirectory>
+                    <workingDirectory>${npm-dir}</workingDirectory>
                     <nodeVersion>v20.14.0</nodeVersion>
                     <npmVersion>10.7.0</npmVersion>
                 </configuration>
@@ -91,7 +97,7 @@
                                 ${project.build.directory}/classes/static</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>/src/frontend/dist/bank/browser</directory>
+                                    <directory>${npm-dir}${output-dir}</directory>
                                 </resource>
                             </resources>
                         </configuration>
