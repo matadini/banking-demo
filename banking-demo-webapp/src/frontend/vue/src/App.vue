@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HeaderComponent from './components/HeaderComponent.vue'
-import FooterComponent from './components/FooterComponent.vue'
+import { RouterView } from 'vue-router'
+import NavigationComponent from './components/shared/Navigation.vue'
+import FooterComponent from './components/shared/Footer.vue'
 </script>
 
 <template>
   <div class="container">
-    <HeaderComponent />
-      <router-view></router-view>
+    <NavigationComponent />
+    <div class="container min-vh-100">
+        <router-view></router-view>
+    </div>
     <FooterComponent />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#app {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+</style>

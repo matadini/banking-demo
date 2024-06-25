@@ -1,0 +1,51 @@
+name: Push latest to ECR
+
+on:
+  workflow_dispatch:
+    branches:
+      - master
+    inputs:
+      fronted:
+        type: choice
+        description: Frontend version
+        options:
+          - angular
+          - vue
+        required: true
+        default: 'angular'
+
+jobs:
+  build-docker:
+    name: Build docker images
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'maven'
+
+      - name: Setup AWS ECR Details
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Login to Amazon ECR
+        id: login-pf-aws-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build Java artifacts
+        run: mvn clean install -P${{inputs.fronted}}
+
+      - name: Build Docker images
+        run: |
+          mvn jib:build \
+            -Dregistry=${{ secrets.AWS_ECR }} \
+            -Djib.to.credHelper=ecr-login

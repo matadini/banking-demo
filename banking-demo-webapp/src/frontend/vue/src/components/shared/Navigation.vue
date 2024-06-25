@@ -21,11 +21,12 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <IconCommunity/>
-                    <img src="../assets/bootstrap-logo.svg" alt="" width="30" height="24"
+                <a class="navbar-brand">
+                    <router-link to="/" aria-current="page" class="nav-link active">
+                        <img src="../../assets/bootstrap-logo.svg" alt="" width="30" height="24"
                         class="d-inline-block align-text-top">
                     Bootstrap
+                    </router-link>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,26 +37,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Pulpit</a>
+                            <router-link to="/" aria-current="page" class="nav-link active">Pulpit</router-link>
                         </li>
 
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Płatności
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <ul class="d-flex flex-column list-unstyled">
-                                    <!-- <li><a class="dropdown-item" [routerLink]="['payments', 'new']">Nowa płatność</a>
-                                    </li> -->
-                                    <li><a class="dropdown-item" href="#">Historia transakcji</a></li>
-                                    <li><a class="dropdown-item" href="#">Płatności zaplanowane</a></li>
-                                    <li><a class="dropdown-item" href="#">Koszyk przelewów</a></li>
-                                    <li><a class="dropdown-item" href="#">Moje rachunki</a></li>
-                                </ul>
-                            </div>
+                        <li class=" nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Płatności
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <ul class="d-flex flex-column list-unstyled">
+                                        <li><router-link to="/payments/new" class="dropdown-item">Nowa
+                                                płatność</router-link></li>
+                                        <li><a class="dropdown-item" href="#">Historia transakcji</a></li>
+                                        <li><a class="dropdown-item" href="#">Płatności zaplanowane</a></li>
+                                        <li><a class="dropdown-item" href="#">Koszyk przelewów</a></li>
+                                        <li><a class="dropdown-item" href="#">Moje rachunki</a></li>
+                                    </ul>
+                                </div>
                         </li>
 
                         <li class="nav-item dropdown">
